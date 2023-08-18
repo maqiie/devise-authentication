@@ -13,14 +13,17 @@ class PostsController < ApplicationController
     end
   
     def create
-      post = current_user.posts.build(post_params)
-      if post.save
-        render json: post, status: :created
-      else
-        render json: { error: "Failed to create post" }, status: :unprocessable_entity
+        post = current_user.posts.build(post_params)
+        category = Category.find(params[:category_id]) # Assuming you have a category_id parameter in your form
+        post.category = category if category # Associate the post with the selected category
+    
+        if post.save
+          render json: post, status: :created
+        else
+          render json: { error: "Failed to create post" }, status: :unprocessable_entity
+        end
       end
-    end
-  
+      
     def update
       post = current_user.posts.find(params[:id])
       if post.update(post_params)
@@ -49,9 +52,8 @@ class PostsController < ApplicationController
     end
   
     private
-  
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :category_id, :image)
     end
   end
   
