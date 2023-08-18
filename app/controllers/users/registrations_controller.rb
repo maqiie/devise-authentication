@@ -55,10 +55,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_sign_up_path_for(resource)
   #   super(resource)
   # end
-  body: JSON.stringify({user:{
-    email:"example@gmail.com",
-    password:"example_password"
-    }})
+  # body: JSON.stringify({user:{
+  #   email:"example@gmail.com",
+  #   password:"example_password"
+  #   }})
   
 
   # The path used after sign up for inactive accounts.

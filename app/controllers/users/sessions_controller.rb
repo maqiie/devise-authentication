@@ -18,11 +18,11 @@ class Users::SessionsController < Devise::SessionsController
   # def destroy
   #   super
   # end
-  body: JSON.stringify({user:{
-    email:"example@gmail.com",
-    password:"example_password",
-    password_confirmation:"<PASSWORD>"
-    }})
+  # body: JSON.stringify({user:{
+  #   email:"example@gmail.com",
+  #   password:"example_password",
+  #   password_confirmation:"<PASSWORD>"
+  #   }})
 
   # protected
 

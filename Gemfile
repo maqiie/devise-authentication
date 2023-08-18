@@ -7,6 +7,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "rails", "~> 7.0.6"
 gem "devise"
 gem "jsonapi-serializer"
+gem 'cancancan'
+
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
