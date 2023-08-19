@@ -1,5 +1,70 @@
+# Rails.application.routes.draw do
+#   get 'likes/create'
+#   devise_for :users, path: '', path_names: {
+#     sign_in: 'login',
+#     sign_out: 'logout',
+#     registration: 'signup'
+#    },
+#    controllers: {
+#     sessions: 'users/sessions',
+#     Registrations: 'users/registrations'
+#    }
+  
+#    resources :users, only: [:index, :show, :create, :update, :destroy]
+#    resources :posts, only: [:index, :show, :create, :update, :destroy]
+#    resources :comments, only: [:index, :create, :destroy]
+   
+#   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+#   resources :posts do
+#     member do
+#       post :like
+#       post :dislike
+#     end
+#   end
+  
+#   # Defines the root path route ("/")
+#   # root "articles#index"
+# end
+
+
+
+# Rails.application.routes.draw do
+#   get 'likes/create'
+  
+#   devise_for :users, path: '', path_names: {
+#     sign_in: 'login',
+#     sign_out: 'logout',
+#     registration: 'signup'
+#    },
+#    controllers: {
+#     sessions: 'users/sessions',
+#     registrations: 'users/registrations'
+#    }
+  
+  
+#   # ... other resource routes ...
+  
+#   # Define additional nested routes if needed
+  
+
+#   resources :users, only: [:index, :show, :update, :destroy]  # Remove :create from here
+#   resources :posts, only: [:index, :show, :create, :update, :destroy]
+#   resources :comments, only: [:index, :create, :destroy]
+
+#   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+#   resources :posts do
+#     member do
+#       post :like
+#       post :dislike
+#     end
+#   end
+  
+#   # Defines the root path route ("/")
+#   # root "articles#index"
+# end
 Rails.application.routes.draw do
   get 'likes/create'
+  
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -7,13 +72,11 @@ Rails.application.routes.draw do
    },
    controllers: {
     sessions: 'users/sessions',
-    Registrations: 'users/registrations'
+    registrations: 'users/registrations'
    }
   
-   resources :users, only: [:index, :show, :create, :update, :destroy]
-   resources :posts, only: [:index, :show, :create, :update, :destroy]
-   resources :comments, only: [:index, :create, :destroy]
-   
+  # ... other resource routes ...
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :posts do
     member do
