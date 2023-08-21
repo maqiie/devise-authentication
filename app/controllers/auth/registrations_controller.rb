@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
   
   # skip_before_action :verify_authenticity_token
   # protect_from_forgery with: :null_session
   # skip_before_action :verify_authenticity_token, only: [:create]
+  wrap_parameters format: []
 
   respond_to :json
   # before_action :configure_sign_up_params, only: [:create]
@@ -54,7 +55,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # protected
+#   pro
 
+# def resource_params
+#   sign_in_params = params.require(:session).permit(:email, :password)
+#   sign_in_params
+# end
+
+  
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
@@ -109,3 +117,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 end
+# class Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
+  
+
+#   private
+
+#   def sign_up_params
+#     params.permit(:name, :email, :password, :password_confirmation)
+#   end
+# end

@@ -83,6 +83,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (1.2.2)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.1)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -179,6 +183,7 @@ DEPENDENCIES
   cancancan
   debug
   devise
+  devise_token_auth
   jsonapi-serializer
   puma (~> 5.0)
   rails (~> 7.0.6)
